@@ -41,17 +41,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCV }) => {
   ];
 
   const themes: { id: ThemeMode; label: string; dot: string }[] = [
-    { id: 'light', label: 'Clean White (Default)', dot: 'bg-white border border-slate-300' },
-    { id: 'navy', label: 'Deep Navy', dot: 'bg-blue-600' },
+    { id: 'navy', label: 'Deep Navy (Default)', dot: 'bg-blue-600' },
     { id: 'midnight', label: 'Obsidian Midnight', dot: 'bg-zinc-800' },
     { id: 'emerald', label: 'Cyber Emerald', dot: 'bg-emerald-500' },
+    { id: 'light', label: 'Executive Light', dot: 'bg-slate-200 border border-slate-400' },
   ];
 
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         isScrolled 
-          ? 'bg-[var(--bg-overlay)] backdrop-blur-md border-b border-[var(--border-subtle)] shadow-sm' 
+          ? 'bg-[var(--bg-overlay)] backdrop-blur-md border-b border-[var(--border-subtle)] shadow-lg shadow-black/20' 
           : 'bg-transparent border-b border-transparent'
       }`}
     >
@@ -61,7 +61,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCV }) => {
           {/* Zone 1: Single text element wordmark (Top Bar Contract) */}
           <a 
             href="#hero" 
-            className="text-lg sm:text-xl font-bold tracking-tight text-[var(--text-main)] hover:text-sky-600 transition-colors whitespace-nowrap"
+            className="text-lg sm:text-xl font-bold tracking-tight text-[var(--text-main)] hover:text-cyan-400 transition-colors whitespace-nowrap"
           >
             Alagie Bah
           </a>
@@ -72,10 +72,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCV }) => {
               <a
                 key={link.label}
                 href={link.href}
-                className="hover:text-sky-600 transition-colors py-1 relative group"
+                className="hover:text-cyan-400 transition-colors py-1 relative group"
               >
                 {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-sky-600 transition-all duration-200 group-hover:w-full" />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 transition-all duration-200 group-hover:w-full" />
               </a>
             ))}
           </nav>
@@ -86,17 +86,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCV }) => {
             <div className="relative" ref={themeMenuRef}>
               <button
                 onClick={() => setIsThemeMenuOpen(!isThemeMenuOpen)}
-                className="inline-flex items-center gap-1.5 px-2.5 py-2 text-xs font-medium text-[var(--text-muted)] hover:text-[var(--text-main)] bg-[var(--bg-card)] border border-[var(--border-subtle)] rounded-lg hover:border-[var(--border-active)] transition-colors cursor-pointer shadow-sm"
+                className="inline-flex items-center gap-1.5 px-2.5 py-2 text-xs font-medium text-[var(--text-muted)] hover:text-[var(--text-main)] bg-[var(--bg-card)] border border-[var(--border-subtle)] rounded-lg hover:border-[var(--border-active)] transition-colors cursor-pointer"
                 title="Change background color palette"
                 aria-label="Theme menu"
               >
-                <Palette className="w-4 h-4 text-sky-600" />
-                <span className="capitalize">{theme === 'light' ? 'White' : theme}</span>
+                <Palette className="w-4 h-4 text-cyan-400" />
+                <span className="capitalize">{theme}</span>
               </button>
 
               {isThemeMenuOpen && (
-                <div className="absolute right-0 mt-2 w-48 rounded-xl bg-[var(--bg-card)] border border-[var(--border-subtle)] shadow-xl p-1.5 z-50 text-xs">
-                  <div className="px-2.5 py-1 text-[10px] font-mono uppercase text-[var(--text-dim)] tracking-wider">
+                <div className="absolute right-0 mt-2 w-48 rounded-xl bg-[var(--bg-card)] border border-[var(--border-subtle)] shadow-2xl p-1.5 z-50 text-xs">
+                  <div className="px-2.5 py-1 text-[10px] font-mono uppercase text-slate-400 tracking-wider">
                     Background Color
                   </div>
                   {themes.map((t) => (
@@ -108,7 +108,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCV }) => {
                       }}
                       className={`w-full flex items-center justify-between px-2.5 py-2 rounded-lg text-left transition-colors cursor-pointer ${
                         theme === t.id
-                          ? 'bg-sky-50 text-sky-700 font-semibold'
+                          ? 'bg-cyan-500/20 text-cyan-300 font-semibold'
                           : 'text-[var(--text-muted)] hover:bg-[var(--bg-card-hover)] hover:text-[var(--text-main)]'
                       }`}
                     >
@@ -116,7 +116,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCV }) => {
                         <span className={`w-2.5 h-2.5 rounded-full ${t.dot}`} />
                         <span>{t.label}</span>
                       </div>
-                      {theme === t.id && <Check className="w-3.5 h-3.5 text-sky-600" />}
+                      {theme === t.id && <Check className="w-3.5 h-3.5 text-cyan-400" />}
                     </button>
                   ))}
                 </div>
@@ -125,16 +125,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCV }) => {
 
             <button
               onClick={onOpenCV}
-              className="inline-flex items-center gap-2 px-3.5 py-2 text-xs sm:text-sm font-medium text-[var(--text-main)] bg-[var(--bg-card)] border border-[var(--border-subtle)] rounded-lg hover:bg-[var(--bg-card-hover)] hover:border-[var(--border-active)] transition-colors whitespace-nowrap cursor-pointer shadow-sm"
+              className="inline-flex items-center gap-2 px-3.5 py-2 text-xs sm:text-sm font-medium text-[var(--text-main)] bg-[var(--bg-card)] border border-[var(--border-subtle)] rounded-lg hover:bg-[var(--bg-card-hover)] hover:text-white hover:border-[var(--border-active)] transition-colors whitespace-nowrap cursor-pointer"
               title="Open printable CV"
             >
-              <Download className="w-4 h-4 text-sky-600" />
+              <Download className="w-4 h-4 text-cyan-400" />
               <span>Download CV</span>
             </button>
 
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-3.5 py-2 text-xs sm:text-sm font-semibold text-white bg-sky-600 rounded-lg hover:bg-sky-700 transition-colors whitespace-nowrap shadow-sm shadow-sky-600/20"
+              className="inline-flex items-center gap-2 px-3.5 py-2 text-xs sm:text-sm font-medium text-slate-950 bg-cyan-400 rounded-lg hover:bg-cyan-300 transition-colors whitespace-nowrap font-semibold shadow-sm shadow-cyan-500/20"
             >
               <Mail className="w-4 h-4" />
               <span>Contact Me</span>

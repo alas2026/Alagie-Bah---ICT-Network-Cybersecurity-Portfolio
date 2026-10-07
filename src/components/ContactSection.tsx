@@ -161,20 +161,20 @@ export const ContactSection: React.FC = () => {
               </p>
 
               {submitted ? (
-                <div className="p-6 rounded-xl bg-[var(--bg-card)] border border-sky-500/40 text-center space-y-4 shadow-sm">
-                  <div className="w-12 h-12 rounded-full bg-sky-50 border border-sky-500/40 flex items-center justify-center mx-auto text-sky-600">
+                <div className="p-6 rounded-xl bg-slate-900 border border-cyan-500/40 text-center space-y-4">
+                  <div className="w-12 h-12 rounded-full bg-cyan-950 border border-cyan-500/40 flex items-center justify-center mx-auto text-cyan-400">
                     <CheckCircle2 className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-[var(--text-main)]">Message Prepared</h4>
-                    <p className="text-xs sm:text-sm text-[var(--text-muted)] mt-1 max-w-md mx-auto">
-                      Thank you, <span className="text-sky-600 font-semibold">{formData.name}</span>. Your inquiry regarding "{formData.subject}" has been queued. You can also trigger an immediate dispatch directly through your default mail client:
+                    <h4 className="text-base font-bold text-white">Message Prepared</h4>
+                    <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-md mx-auto">
+                      Thank you, <span className="text-cyan-400 font-semibold">{formData.name}</span>. Your inquiry regarding "{formData.subject}" has been queued. You can also trigger an immediate dispatch directly through your default mail client:
                     </p>
                   </div>
                   <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
                     <button
                       onClick={handleOpenMailto}
-                      className="px-4 py-2 text-xs font-semibold text-white bg-sky-600 hover:bg-sky-700 rounded-lg cursor-pointer transition-colors shadow-sm"
+                      className="px-4 py-2 text-xs font-semibold text-slate-950 bg-cyan-400 hover:bg-cyan-300 rounded-lg cursor-pointer"
                     >
                       Open in Email App
                     </button>
@@ -183,7 +183,7 @@ export const ContactSection: React.FC = () => {
                         setSubmitted(false);
                         setFormData({ name: '', email: '', subject: 'Network / IT Employment Opportunity', message: '' });
                       }}
-                      className="px-4 py-2 text-xs font-medium text-[var(--text-main)] bg-[var(--bg-secondary)] hover:bg-[var(--bg-card-hover)] border border-[var(--border-subtle)] rounded-lg cursor-pointer transition-colors"
+                      className="px-4 py-2 text-xs font-medium text-slate-300 bg-slate-800 hover:bg-slate-700 rounded-lg cursor-pointer"
                     >
                       Send Another Message
                     </button>
@@ -192,15 +192,15 @@ export const ContactSection: React.FC = () => {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   {error && (
-                    <div className="p-3 rounded-lg bg-red-50 border border-red-200 text-xs text-red-700">
+                    <div className="p-3 rounded-lg bg-red-950/60 border border-red-800/80 text-xs text-red-200">
                       {error}
                     </div>
                   )}
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1">
-                      <label htmlFor="contact-name" className="block text-xs font-semibold text-[var(--text-main)]">
-                        Your Name <span className="text-sky-600">*</span>
+                      <label htmlFor="contact-name" className="block text-xs font-medium text-slate-300">
+                        Your Name <span className="text-cyan-400">*</span>
                       </label>
                       <input
                         id="contact-name"
@@ -209,13 +209,13 @@ export const ContactSection: React.FC = () => {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="e.g. Dr. John Davies / Jane Smith"
-                        className="w-full px-3.5 py-2.5 rounded-lg bg-[var(--bg-card)] border border-[var(--border-subtle)] text-[var(--text-main)] text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent placeholder:text-[var(--text-dim)] shadow-sm"
+                        className="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-slate-700/80 text-white text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent placeholder:text-slate-600"
                       />
                     </div>
 
                     <div className="space-y-1">
-                      <label htmlFor="contact-email" className="block text-xs font-semibold text-[var(--text-main)]">
-                        Your Email <span className="text-sky-600">*</span>
+                      <label htmlFor="contact-email" className="block text-xs font-medium text-slate-300">
+                        Your Email <span className="text-cyan-400">*</span>
                       </label>
                       <input
                         id="contact-email"
@@ -224,20 +224,20 @@ export const ContactSection: React.FC = () => {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="you@domain.com"
-                        className="w-full px-3.5 py-2.5 rounded-lg bg-[var(--bg-card)] border border-[var(--border-subtle)] text-[var(--text-main)] text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent placeholder:text-[var(--text-dim)] shadow-sm"
+                        className="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-slate-700/80 text-white text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent placeholder:text-slate-600"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-1">
-                    <label htmlFor="contact-subject" className="block text-xs font-semibold text-[var(--text-main)]">
-                      Subject <span className="text-sky-600">*</span>
+                    <label htmlFor="contact-subject" className="block text-xs font-medium text-slate-300">
+                      Subject <span className="text-cyan-400">*</span>
                     </label>
                     <select
                       id="contact-subject"
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-[var(--bg-card)] border border-[var(--border-subtle)] text-[var(--text-main)] text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent shadow-sm"
+                      className="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-slate-700/80 text-white text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                     >
                       <option value="Network / IT Employment Opportunity">Network / IT Employment Opportunity</option>
                       <option value="Technical Consultation or Infrastructure Project">Technical Consultation or Infrastructure Project</option>
@@ -247,8 +247,8 @@ export const ContactSection: React.FC = () => {
                   </div>
 
                   <div className="space-y-1">
-                    <label htmlFor="contact-message" className="block text-xs font-semibold text-[var(--text-main)]">
-                      Message <span className="text-sky-600">*</span>
+                    <label htmlFor="contact-message" className="block text-xs font-medium text-slate-300">
+                      Message <span className="text-cyan-400">*</span>
                     </label>
                     <textarea
                       id="contact-message"
@@ -257,19 +257,19 @@ export const ContactSection: React.FC = () => {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Please write your inquiry or message here..."
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-[var(--bg-card)] border border-[var(--border-subtle)] text-[var(--text-main)] text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent placeholder:text-[var(--text-dim)] shadow-sm"
+                      className="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-slate-700/80 text-white text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent placeholder:text-slate-600"
                     />
                   </div>
 
                   <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <span className="text-xs text-[var(--text-dim)]">
-                      All communications sent to <span className="text-[var(--text-muted)] font-medium">{PERSONAL_INFO.email}</span>
+                    <span className="text-xs text-slate-500">
+                      All communications sent to <span className="text-slate-400">{PERSONAL_INFO.email}</span>
                     </span>
 
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-semibold text-white bg-sky-600 hover:bg-sky-700 rounded-lg transition-colors shadow-sm shadow-sky-600/20 disabled:opacity-50 cursor-pointer"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-semibold text-slate-950 bg-cyan-400 hover:bg-cyan-300 rounded-lg transition-colors shadow-sm shadow-cyan-500/20 disabled:opacity-50 cursor-pointer"
                     >
                       <Send className="w-4 h-4" />
                       <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>

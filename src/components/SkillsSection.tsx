@@ -61,9 +61,9 @@ export const SkillsSection: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="max-w-2xl">
-            <span className="text-xs font-mono uppercase tracking-wider text-sky-600">02. Capabilities</span>
+            <span className="text-xs font-mono uppercase tracking-wider text-cyan-400">02. Capabilities</span>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[var(--text-main)] mt-1">
-              Technical Skills &amp; Competencies
+              Technical Skills & Competencies
             </h2>
             <p className="text-[var(--text-muted)] mt-2 text-sm sm:text-base">
               A comprehensive toolkit developed across academic computing studies, Cisco certification tracks, and practical systems support.
@@ -71,14 +71,14 @@ export const SkillsSection: React.FC = () => {
           </div>
 
           {/* Interactive Filter Tabs (Zero-Pill: segmented button controls with click handlers) */}
-          <div className="flex flex-wrap items-center gap-1.5 p-1 bg-[var(--bg-card)] border border-[var(--border-subtle)] rounded-lg shadow-sm">
+          <div className="flex flex-wrap items-center gap-1.5 p-1 bg-[var(--bg-card)] border border-[var(--border-subtle)] rounded-lg">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
                 className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors whitespace-nowrap cursor-pointer ${
                   activeCategory === cat.id
-                    ? 'bg-sky-600 text-white font-semibold shadow-sm'
+                    ? 'bg-cyan-500 text-slate-950 font-semibold shadow-sm'
                     : 'text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-card-hover)]'
                 }`}
               >
@@ -93,10 +93,10 @@ export const SkillsSection: React.FC = () => {
           {TECHNICAL_SKILLS.map((group, idx) => (
             <div 
               key={group.category}
-              className="theme-card border theme-border rounded-xl p-6 transition-colors shadow-sm"
+              className="theme-card border theme-border rounded-xl p-6 transition-colors"
             >
               <div className="flex items-center gap-3 mb-3">
-                <div className="p-2.5 rounded-lg bg-[var(--bg-primary)] border border-[var(--border-subtle)] text-sky-600">
+                <div className="p-2.5 rounded-lg bg-[var(--bg-primary)] border border-[var(--border-subtle)] text-cyan-400">
                   {idx === 0 && <Network className="w-5 h-5" />}
                   {idx === 1 && <ShieldAlert className="w-5 h-5" />}
                   {idx === 2 && <Database className="w-5 h-5" />}
@@ -116,7 +116,7 @@ export const SkillsSection: React.FC = () => {
                 <div className="flex flex-wrap gap-x-2 gap-y-1 text-xs text-[var(--text-muted)]">
                   {group.skills.map((skill, sIdx) => (
                     <span key={skill} className="inline-flex items-center">
-                      <span className="text-sky-600 font-semibold">{skill}</span>
+                      <span className="text-cyan-400 font-medium">{skill}</span>
                       {sIdx < group.skills.length - 1 && <span className="text-[var(--text-dim)] ml-2" aria-hidden="true">·</span>}
                     </span>
                   ))}
