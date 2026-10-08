@@ -1,3 +1,7 @@
+import projectExamSystem from '../assets/images/project_exam_system_1791048187920.jpg';
+import projectNetworkLab from '../assets/images/project_network_lab_1791048199361.jpg';
+import projectBroadcastOps from '../assets/images/project_broadcast_ops_1791048211402.jpg';
+
 export interface EducationItem {
   id: string;
   institution: string;
@@ -267,7 +271,7 @@ export const PROJECTS: ProjectItem[] = [
       "Relational MySQL database schemas for candidates, questions, and test scores",
       "Clean administration panel for examiners to manage exam banks"
     ],
-    image: "/src/assets/images/project_exam_system_1791048187920.jpg",
+    image: projectExamSystem,
     linkText: "GitHub Repo",
     linkUrl: "https://github.com/alas2026/computer-based-exam-system.git",
     cloneCommand: "git clone https://github.com/alas2026/computer-based-exam-system.git"
@@ -286,7 +290,7 @@ export const PROJECTS: ProjectItem[] = [
       "Implemented IPv4 subnetting schemes (/24, /26, /30 point-to-point links)",
       "Practiced Linux network diagnostic commands (ip, ping, traceroute, netstat, ufw)"
     ],
-    image: "/src/assets/images/project_network_lab_1791048199361.jpg"
+    image: projectNetworkLab
   },
   {
     id: "github-repos",
@@ -300,7 +304,7 @@ export const PROJECTS: ProjectItem[] = [
       "Network documentation, packet analysis notes, and command cheat sheets",
       "Web styling, script utilities, and collaborative Git branches"
     ],
-    image: "/src/assets/images/project_broadcast_ops_1791048211402.jpg",
+    image: projectBroadcastOps,
     linkText: "Visit GitHub Profile",
     linkUrl: "https://github.com/alas2026"
   }

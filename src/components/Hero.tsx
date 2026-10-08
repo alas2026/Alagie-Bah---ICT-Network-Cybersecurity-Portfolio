@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowDown, Download, Mail, Github, ExternalLink, MapPin, Shield, Network, Server, Terminal } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
+import heroPortrait from '../assets/images/alagiebahprofile.jpg';
 
 interface HeroProps {
   onOpenCV: () => void;
@@ -23,40 +24,40 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
           <div className="lg:col-span-7 space-y-6">
             
             {/* Location & Status Line (Zero-Pill Rule: unboxed text with separators) */}
-            <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-[var(--text-muted)]">
-              <span className="inline-flex items-center gap-1.5 text-sky-600 font-semibold">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                Available for Technical &amp; Network Roles
+            <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-slate-400">
+              <span className="inline-flex items-center gap-1.5 text-cyan-400 font-medium">
+                <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                Available for Technical & Network Roles
               </span>
-              <span aria-hidden="true" className="text-[var(--text-dim)]">·</span>
-              <span className="inline-flex items-center gap-1 text-[var(--text-muted)]">
-                <MapPin className="w-3.5 h-3.5 text-sky-600" />
+              <span aria-hidden="true">·</span>
+              <span className="inline-flex items-center gap-1 text-slate-300">
+                <MapPin className="w-3.5 h-3.5 text-slate-400" />
                 {PERSONAL_INFO.location}
               </span>
             </div>
 
             {/* Candidate Identity */}
             <div className="space-y-2">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-main)] leading-tight text-balance">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight text-balance">
                 Alagie Bah
               </h1>
-              <p className="text-base sm:text-lg font-medium text-sky-600 leading-relaxed">
+              <p className="text-base sm:text-lg font-medium text-cyan-300/90 leading-relaxed">
                 {PERSONAL_INFO.headline}
               </p>
             </div>
 
             {/* Key Hero Headline Quote */}
-            <div className="border-l-2 border-sky-500 pl-4 py-1">
-              <blockquote className="text-xl sm:text-2xl font-semibold text-[var(--text-main)] tracking-tight leading-snug">
+            <div className="border-l-2 border-cyan-500/60 pl-4 py-1">
+              <blockquote className="text-xl sm:text-2xl font-semibold text-slate-100 tracking-tight leading-snug">
                 “Building Secure Networks. Solving Technical Problems. Creating Digital Solutions.”
               </blockquote>
             </div>
 
             {/* Concise overview */}
-            <p className="text-sm sm:text-base text-[var(--text-muted)] leading-relaxed max-w-2xl">
-              National Diploma graduate in Computer Science from MDI with hands-on networking and PC repair &amp; maintenance (hardware and software) from IIHT and QuantumNet. 
-              Bringing practical experience across broadcast operations at <span className="text-[var(--text-main)] font-semibold">QTV Gambia</span>, 
-              telecom support at <span className="text-[var(--text-main)] font-semibold">Qcell</span>, and grassroots community advocacy with <span className="text-[var(--text-main)] font-semibold">NSGA</span> (UNFPA &amp; UNICEF-backed). 
+            <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl">
+              National Diploma graduate in Computer Science from MDI with hands-on networking and PC repair & maintenance (hardware and software) from IIHT and QuantumNet. 
+              Bringing practical experience across broadcast operations at <span className="text-white font-medium">QTV Gambia</span>, 
+              telecom support at <span className="text-white font-medium">Qcell</span>, and grassroots community advocacy with <span className="text-white font-medium">NSGA</span> (UNFPA & UNICEF-backed). 
               Dedicated to solving technical challenges and maintaining secure enterprise network environments.
             </p>
 
@@ -64,7 +65,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <a
                 href="#projects"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-semibold text-white bg-sky-600 hover:bg-sky-700 rounded-lg transition-colors shadow-md shadow-sky-600/20 whitespace-nowrap cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-semibold text-slate-950 bg-cyan-400 hover:bg-cyan-300 rounded-lg transition-colors shadow-md shadow-cyan-500/20 whitespace-nowrap cursor-pointer"
               >
                 <span>View My Projects</span>
                 <ArrowDown className="w-4 h-4" />
@@ -72,17 +73,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
 
               <button
                 onClick={onOpenCV}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-medium text-[var(--text-main)] bg-[var(--bg-card)] border border-[var(--border-subtle)] hover:bg-[var(--bg-card-hover)] hover:border-sky-500 rounded-lg transition-colors whitespace-nowrap cursor-pointer shadow-sm"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-medium text-white bg-slate-900 border border-slate-700 hover:bg-slate-800 hover:border-slate-600 rounded-lg transition-colors whitespace-nowrap cursor-pointer"
               >
-                <Download className="w-4 h-4 text-sky-600" />
+                <Download className="w-4 h-4 text-cyan-400" />
                 <span>Download CV</span>
               </button>
 
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-medium text-[var(--text-main)] bg-[var(--bg-card)] border border-[var(--border-subtle)] hover:bg-[var(--bg-card-hover)] hover:border-sky-500 rounded-lg transition-colors whitespace-nowrap shadow-sm"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-medium text-slate-200 bg-slate-900/60 border border-slate-800 hover:bg-slate-800 hover:text-white rounded-lg transition-colors whitespace-nowrap"
               >
-                <Mail className="w-4 h-4 text-[var(--text-dim)]" />
+                <Mail className="w-4 h-4 text-slate-400" />
                 <span>Contact Me</span>
               </a>
 
@@ -90,36 +91,36 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
                 href={PERSONAL_INFO.github}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium text-[var(--text-main)] hover:text-sky-600 border border-[var(--border-subtle)] hover:border-sky-500 bg-[var(--bg-card)] rounded-lg transition-colors whitespace-nowrap shadow-sm"
+                className="inline-flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium text-slate-300 hover:text-white border border-slate-800 hover:border-slate-700 bg-slate-950 rounded-lg transition-colors whitespace-nowrap"
                 title="View GitHub profile"
               >
                 <Github className="w-4 h-4" />
                 <span>GitHub</span>
-                <ExternalLink className="w-3.5 h-3.5 text-[var(--text-dim)]" />
+                <ExternalLink className="w-3.5 h-3.5 text-slate-500" />
               </a>
             </div>
 
             {/* Editorial highlights bar with unboxed typography */}
-            <div className="pt-4 border-t border-[var(--border-subtle)] grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
+            <div className="pt-4 border-t border-slate-800/80 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
               <div>
-                <span className="block text-[var(--text-dim)] font-mono">Academic Track</span>
-                <span className="font-semibold text-[var(--text-main)]">ND Computer Science</span>
-                <span className="block text-[var(--text-muted)]">Completed (MDI)</span>
+                <span className="block text-slate-500 font-mono">Academic Track</span>
+                <span className="font-semibold text-slate-200">ND Computer Science</span>
+                <span className="block text-slate-400">Completed (MDI)</span>
               </div>
               <div>
-                <span className="block text-[var(--text-dim)] font-mono">Network Specialization</span>
-                <span className="font-semibold text-[var(--text-main)]">CCNA &amp; Security</span>
-                <span className="block text-[var(--text-muted)]">IIHT &amp; Cisco Training</span>
+                <span className="block text-slate-500 font-mono">Network Specialization</span>
+                <span className="font-semibold text-slate-200">CCNA & Security</span>
+                <span className="block text-slate-400">IIHT & Cisco Training</span>
               </div>
               <div>
-                <span className="block text-[var(--text-dim)] font-mono">Operations</span>
-                <span className="font-semibold text-[var(--text-main)]">Programs Assistant</span>
-                <span className="block text-[var(--text-muted)]">QTV Gambia</span>
+                <span className="block text-slate-500 font-mono">Operations</span>
+                <span className="font-semibold text-slate-200">Programs Assistant</span>
+                <span className="block text-slate-400">QTV Gambia</span>
               </div>
               <div>
-                <span className="block text-[var(--text-dim)] font-mono">Field Experience</span>
-                <span className="font-semibold text-[var(--text-main)]">Community Outreach</span>
-                <span className="block text-[var(--text-muted)]">NSGA · UNICEF/UNFPA</span>
+                <span className="block text-slate-500 font-mono">Field Experience</span>
+                <span className="font-semibold text-slate-200">Community Outreach</span>
+                <span className="block text-slate-400">NSGA · UNICEF/UNFPA</span>
               </div>
             </div>
 
@@ -137,7 +138,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
                 {/* Photo container with fallback */}
                 <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-[var(--bg-primary)]">
                   <img
-                    src="/src/assets/images/hero_portrait_alagie_1791048171531.jpg"
+                    src={heroPortrait}
                     alt="Alagie Bah - ICT and Cybersecurity Professional"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"
