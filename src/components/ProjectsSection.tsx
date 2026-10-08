@@ -257,31 +257,31 @@ export const ProjectsSection: React.FC = () => {
                 <span>Alagie Bah Portfolio</span>
               </div>
 
-              <h3 className="text-2xl font-bold text-white">
+              <h3 className="text-2xl font-bold text-[var(--text-main)]">
                 {selectedProject.title}
               </h3>
 
               {/* Technologies */}
-              <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-slate-300">
-                <span className="text-slate-500 font-mono">Tech Stack:</span>
+              <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-[var(--text-muted)]">
+                <span className="text-[var(--text-dim)] font-mono">Tech Stack:</span>
                 {selectedProject.technologies.map((t, idx) => (
-                  <span key={t} className="inline-flex items-center text-cyan-400 font-medium">
+                  <span key={t} className="inline-flex items-center text-sky-600 font-semibold">
                     {t}
-                    {idx < selectedProject.technologies.length - 1 && <span className="text-slate-600 ml-2" aria-hidden="true">·</span>}
+                    {idx < selectedProject.technologies.length - 1 && <span className="text-[var(--text-dim)] ml-2" aria-hidden="true">·</span>}
                   </span>
                 ))}
               </div>
 
-              <p className="text-sm text-slate-300 leading-relaxed">
+              <p className="text-sm text-[var(--text-muted)] leading-relaxed">
                 {selectedProject.extendedSummary}
               </p>
 
               <div className="space-y-2">
-                <h4 className="text-xs font-mono uppercase tracking-wider text-slate-400">Key Features & Architecture Highlights</h4>
-                <ul className="space-y-2 text-xs sm:text-sm text-slate-300">
+                <h4 className="text-xs font-mono uppercase tracking-wider text-[var(--text-dim)]">Key Features &amp; Architecture Highlights</h4>
+                <ul className="space-y-2 text-xs sm:text-sm text-[var(--text-muted)]">
                   {selectedProject.highlights.map((h, i) => (
                     <li key={i} className="flex items-start gap-2.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0 mt-2" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-sky-600 shrink-0 mt-2" />
                       <span>{h}</span>
                     </li>
                   ))}
@@ -321,7 +321,7 @@ export const ProjectsSection: React.FC = () => {
                     href={selectedProject.linkUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-slate-950 bg-cyan-400 hover:bg-cyan-300 rounded-lg"
+                    className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-white bg-sky-600 hover:bg-sky-700 rounded-lg shadow-sm transition-colors"
                   >
                     <Github className="w-4 h-4" />
                     <span>View Repository on GitHub</span>

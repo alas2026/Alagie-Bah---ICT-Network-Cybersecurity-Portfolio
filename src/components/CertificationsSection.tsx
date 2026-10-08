@@ -102,7 +102,7 @@ export const CertificationsSection: React.FC = () => {
 
               <div className="p-3 rounded-lg bg-[var(--bg-primary)] border border-[var(--border-subtle)]">
                 <span className="block text-[11px] font-mono text-[var(--text-dim)] uppercase tracking-wider mb-1">Target Focus</span>
-                <p className="text-sm font-medium text-cyan-300">
+                <p className="text-sm font-semibold text-sky-600">
                   {selectedItem.focus}
                 </p>
               </div>
@@ -117,7 +117,7 @@ export const CertificationsSection: React.FC = () => {
               <div className="pt-4 border-t border-[var(--border-subtle)] flex justify-end">
                 <button
                   onClick={() => setSelectedItem(null)}
-                  className="px-4 py-2 text-xs font-semibold text-slate-950 bg-cyan-400 hover:bg-cyan-300 rounded-lg transition-colors cursor-pointer"
+                  className="px-4 py-2 text-xs font-semibold text-white bg-sky-600 hover:bg-sky-700 rounded-lg transition-colors cursor-pointer shadow-sm"
                 >
                   Close Specification
                 </button>

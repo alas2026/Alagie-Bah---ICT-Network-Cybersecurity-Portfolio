@@ -123,29 +123,29 @@ ${SPOKEN_LANGUAGES.map(l => `• ${l.language}: ${l.proficiency}`).join('\n')}
         <div className="p-6 sm:p-10 overflow-y-auto space-y-8 bg-[var(--bg-primary)] text-[var(--text-main)] font-sans print:p-0 print:bg-white print:text-black print:overflow-visible">
           
           {/* Header */}
-          <div className="border-b border-slate-800 print:border-slate-300 pb-6 space-y-2">
-            <h1 className="text-3xl sm:text-4xl font-extrabold text-white print:text-black tracking-tight">
+          <div className="border-b border-[var(--border-subtle)] print:border-slate-300 pb-6 space-y-2">
+            <h1 className="text-3xl sm:text-4xl font-extrabold text-[var(--text-main)] print:text-black tracking-tight">
               Alagie Bah
             </h1>
-            <p className="text-sm sm:text-base font-semibold text-cyan-400 print:text-slate-800">
+            <p className="text-sm sm:text-base font-semibold text-sky-600 print:text-slate-800">
               {PERSONAL_INFO.headline}
             </p>
             
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-400 print:text-slate-700 pt-2 font-mono">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-[var(--text-dim)] print:text-slate-700 pt-2 font-mono">
               <span className="flex items-center gap-1">
-                <MapPin className="w-3 h-3 text-cyan-400 print:hidden" />
+                <MapPin className="w-3 h-3 text-sky-600 print:hidden" />
                 {PERSONAL_INFO.location}
               </span>
               <span>·</span>
-              <a href={`mailto:${PERSONAL_INFO.email}`} className="text-cyan-400 print:text-black hover:underline">
+              <a href={`mailto:${PERSONAL_INFO.email}`} className="text-sky-600 print:text-black hover:underline">
                 {PERSONAL_INFO.email}
               </a>
               <span>·</span>
-              <a href={PERSONAL_INFO.linkedIn} target="_blank" rel="noreferrer" className="text-slate-300 print:text-black hover:underline">
+              <a href={PERSONAL_INFO.linkedIn} target="_blank" rel="noreferrer" className="text-[var(--text-muted)] print:text-black hover:underline">
                 LinkedIn Profile
               </a>
               <span>·</span>
-              <a href={PERSONAL_INFO.github} target="_blank" rel="noreferrer" className="text-slate-300 print:text-black hover:underline">
+              <a href={PERSONAL_INFO.github} target="_blank" rel="noreferrer" className="text-[var(--text-muted)] print:text-black hover:underline">
                 github.com/alas2026
               </a>
             </div>
@@ -153,28 +153,28 @@ ${SPOKEN_LANGUAGES.map(l => `• ${l.language}: ${l.proficiency}`).join('\n')}
 
           {/* Statement / Summary */}
           <div className="space-y-2">
-            <h2 className="text-xs font-mono uppercase tracking-wider text-cyan-400 print:text-slate-900 font-bold border-b border-slate-800 print:border-slate-300 pb-1">
+            <h2 className="text-xs font-mono uppercase tracking-wider text-sky-600 print:text-slate-900 font-bold border-b border-[var(--border-subtle)] print:border-slate-300 pb-1">
               Professional Summary
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300 print:text-slate-800 leading-relaxed">
+            <p className="text-xs sm:text-sm text-[var(--text-muted)] print:text-slate-800 leading-relaxed">
               {PERSONAL_INFO.summary}
             </p>
           </div>
 
           {/* Education */}
           <div className="space-y-4 print-break-inside-avoid">
-            <h2 className="text-xs font-mono uppercase tracking-wider text-cyan-400 print:text-slate-900 font-bold border-b border-slate-800 print:border-slate-300 pb-1">
-              Education & Academic Qualifications
+            <h2 className="text-xs font-mono uppercase tracking-wider text-sky-600 print:text-slate-900 font-bold border-b border-[var(--border-subtle)] print:border-slate-300 pb-1">
+              Education &amp; Academic Qualifications
             </h2>
             <div className="space-y-4">
               {EDUCATION.map((edu) => (
                 <div key={edu.id} className="space-y-1">
                   <div className="flex flex-col sm:flex-row sm:items-baseline justify-between text-xs sm:text-sm">
-                    <span className="font-bold text-white print:text-black">{edu.credential}</span>
-                    <span className="font-mono text-slate-400 print:text-slate-600 text-xs">{edu.period}</span>
+                    <span className="font-bold text-[var(--text-main)] print:text-black">{edu.credential}</span>
+                    <span className="font-mono text-[var(--text-dim)] print:text-slate-600 text-xs">{edu.period}</span>
                   </div>
-                  <div className="text-xs font-medium text-cyan-400 print:text-slate-800">{edu.institution}</div>
-                  <p className="text-xs text-slate-400 print:text-slate-700 leading-relaxed">{edu.description}</p>
+                  <div className="text-xs font-semibold text-sky-600 print:text-slate-800">{edu.institution}</div>
+                  <p className="text-xs text-[var(--text-muted)] print:text-slate-700 leading-relaxed">{edu.description}</p>
                 </div>
               ))}
             </div>
@@ -182,14 +182,14 @@ ${SPOKEN_LANGUAGES.map(l => `• ${l.language}: ${l.proficiency}`).join('\n')}
 
           {/* Cisco & Cybersecurity Training */}
           <div className="space-y-3 print-break-inside-avoid">
-            <h2 className="text-xs font-mono uppercase tracking-wider text-cyan-400 print:text-slate-900 font-bold border-b border-slate-800 print:border-slate-300 pb-1">
-              Cisco & Cybersecurity Specialized Training
+            <h2 className="text-xs font-mono uppercase tracking-wider text-sky-600 print:text-slate-900 font-bold border-b border-[var(--border-subtle)] print:border-slate-300 pb-1">
+              Cisco &amp; Cybersecurity Specialized Training
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
               {TRAINING_CERTIFICATIONS.map((cert) => (
-                <div key={cert.id} className="p-2.5 rounded bg-slate-900/60 print:bg-slate-50 border border-slate-800 print:border-slate-200">
-                  <span className="font-semibold text-white print:text-black block">{cert.title}</span>
-                  <span className="text-[11px] text-cyan-400 print:text-slate-700 block font-mono">{cert.focus}</span>
+                <div key={cert.id} className="p-2.5 rounded-lg bg-[var(--bg-secondary)] print:bg-slate-50 border border-[var(--border-subtle)] print:border-slate-200">
+                  <span className="font-semibold text-[var(--text-main)] print:text-black block">{cert.title}</span>
+                  <span className="text-[11px] text-sky-600 print:text-slate-700 block font-mono">{cert.focus}</span>
                 </div>
               ))}
             </div>
@@ -197,18 +197,18 @@ ${SPOKEN_LANGUAGES.map(l => `• ${l.language}: ${l.proficiency}`).join('\n')}
 
           {/* Work Experience */}
           <div className="space-y-4 print-break-inside-avoid">
-            <h2 className="text-xs font-mono uppercase tracking-wider text-cyan-400 print:text-slate-900 font-bold border-b border-slate-800 print:border-slate-300 pb-1">
+            <h2 className="text-xs font-mono uppercase tracking-wider text-sky-600 print:text-slate-900 font-bold border-b border-[var(--border-subtle)] print:border-slate-300 pb-1">
               Work Experience
             </h2>
             <div className="space-y-5">
               {WORK_EXPERIENCE.map((exp) => (
                 <div key={exp.id} className="space-y-1.5">
                   <div className="flex flex-col sm:flex-row sm:items-baseline justify-between text-xs sm:text-sm">
-                    <span className="font-bold text-white print:text-black">{exp.role} — {exp.company}</span>
-                    <span className="font-mono text-slate-400 print:text-slate-600 text-xs">{exp.period}</span>
+                    <span className="font-bold text-[var(--text-main)] print:text-black">{exp.role} — {exp.company}</span>
+                    <span className="font-mono text-[var(--text-dim)] print:text-slate-600 text-xs">{exp.period}</span>
                   </div>
-                  <p className="text-xs text-slate-300 print:text-slate-700">{exp.summary}</p>
-                  <ul className="list-disc list-inside text-xs text-slate-400 print:text-slate-600 space-y-1 pl-1">
+                  <p className="text-xs text-[var(--text-muted)] print:text-slate-700">{exp.summary}</p>
+                  <ul className="list-disc list-inside text-xs text-[var(--text-muted)] print:text-slate-600 space-y-1 pl-1">
                     {exp.responsibilities.map((r, i) => (
                       <li key={i}>{r}</li>
                     ))}
@@ -220,27 +220,27 @@ ${SPOKEN_LANGUAGES.map(l => `• ${l.language}: ${l.proficiency}`).join('\n')}
 
           {/* Technical Projects */}
           <div className="space-y-3 print-break-inside-avoid">
-            <h2 className="text-xs font-mono uppercase tracking-wider text-cyan-400 print:text-slate-900 font-bold border-b border-slate-800 print:border-slate-300 pb-1">
+            <h2 className="text-xs font-mono uppercase tracking-wider text-sky-600 print:text-slate-900 font-bold border-b border-[var(--border-subtle)] print:border-slate-300 pb-1">
               Featured Projects
             </h2>
             <div className="space-y-3">
               {PROJECTS.map((proj) => (
                 <div key={proj.id} className="space-y-1">
                   <div className="flex flex-col sm:flex-row sm:items-baseline justify-between text-xs sm:text-sm">
-                    <span className="font-bold text-white print:text-black">{proj.title}</span>
-                    <span className="font-mono text-xs text-cyan-400 print:text-slate-600">{proj.technologies.join(', ')}</span>
+                    <span className="font-bold text-[var(--text-main)] print:text-black">{proj.title}</span>
+                    <span className="font-mono text-xs text-sky-600 print:text-slate-600">{proj.technologies.join(', ')}</span>
                   </div>
                   {proj.linkUrl && (
                     <a 
                       href={proj.linkUrl} 
                       target="_blank" 
                       rel="noreferrer" 
-                      className="text-[11px] font-mono text-cyan-400 print:text-sky-700 hover:underline block"
+                      className="text-[11px] font-mono text-sky-600 print:text-sky-700 hover:underline block"
                     >
                       {proj.linkUrl}
                     </a>
                   )}
-                  <p className="text-xs text-slate-400 print:text-slate-700">{proj.description}</p>
+                  <p className="text-xs text-[var(--text-muted)] print:text-slate-700">{proj.description}</p>
                 </div>
               ))}
             </div>
@@ -249,23 +249,23 @@ ${SPOKEN_LANGUAGES.map(l => `• ${l.language}: ${l.proficiency}`).join('\n')}
           {/* Technical Skills & Languages */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2 print-break-inside-avoid">
             <div className="space-y-2">
-              <h2 className="text-xs font-mono uppercase tracking-wider text-cyan-400 print:text-slate-900 font-bold border-b border-slate-800 print:border-slate-300 pb-1">
+              <h2 className="text-xs font-mono uppercase tracking-wider text-sky-600 print:text-slate-900 font-bold border-b border-[var(--border-subtle)] print:border-slate-300 pb-1">
                 Technical Skills Inventory
               </h2>
-              <ul className="text-xs text-slate-300 print:text-slate-800 space-y-1">
-                <li><strong className="text-white print:text-black">Networking:</strong> Cisco Networking, Packet Tracer, Network Administration, Network Defense, Security</li>
-                <li><strong className="text-white print:text-black">Systems:</strong> Linux, Windows, Hardware & Maintenance, Technical Support, IT Support</li>
-                <li><strong className="text-white print:text-black">Programming:</strong> Java, MySQL, HTML, CSS, JavaScript, Git & GitHub</li>
+              <ul className="text-xs text-[var(--text-muted)] print:text-slate-800 space-y-1">
+                <li><strong className="text-[var(--text-main)] print:text-black">Networking:</strong> Cisco Networking, Packet Tracer, Network Administration, Network Defense, Security</li>
+                <li><strong className="text-[var(--text-main)] print:text-black">Systems:</strong> Linux, Windows, Hardware &amp; Maintenance, Technical Support, IT Support</li>
+                <li><strong className="text-[var(--text-main)] print:text-black">Programming:</strong> Java, MySQL, HTML, CSS, JavaScript, Git &amp; GitHub</li>
               </ul>
             </div>
 
             <div className="space-y-2">
-              <h2 className="text-xs font-mono uppercase tracking-wider text-cyan-400 print:text-slate-900 font-bold border-b border-slate-800 print:border-slate-300 pb-1">
-                Languages & Career Interests
+              <h2 className="text-xs font-mono uppercase tracking-wider text-sky-600 print:text-slate-900 font-bold border-b border-[var(--border-subtle)] print:border-slate-300 pb-1">
+                Languages &amp; Career Interests
               </h2>
-              <div className="text-xs text-slate-300 print:text-slate-800 space-y-1">
-                <p><strong className="text-white print:text-black">Languages:</strong> {SPOKEN_LANGUAGES.map(l => `${l.language} (${l.proficiency})`).join(', ')}</p>
-                <p><strong className="text-white print:text-black">Interests:</strong> {CAREER_INTERESTS.join(', ')}</p>
+              <div className="text-xs text-[var(--text-muted)] print:text-slate-800 space-y-1">
+                <p><strong className="text-[var(--text-main)] print:text-black">Languages:</strong> {SPOKEN_LANGUAGES.map(l => `${l.language} (${l.proficiency})`).join(', ')}</p>
+                <p><strong className="text-[var(--text-main)] print:text-black">Interests:</strong> {CAREER_INTERESTS.join(', ')}</p>
               </div>
             </div>
           </div>
@@ -277,7 +277,7 @@ ${SPOKEN_LANGUAGES.map(l => `• ${l.language}: ${l.proficiency}`).join('\n')}
           <span>Prepared for professional opportunities and technical employment.</span>
           <button
             onClick={onClose}
-            className="px-4 py-1.5 text-xs font-medium text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 rounded-md cursor-pointer"
+            className="px-4 py-1.5 text-xs font-medium text-[var(--text-main)] bg-[var(--bg-secondary)] hover:bg-[var(--bg-card-hover)] border border-[var(--border-subtle)] rounded-md cursor-pointer transition-colors"
           >
             Close Viewer
           </button>

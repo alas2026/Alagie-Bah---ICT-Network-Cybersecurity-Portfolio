@@ -8,14 +8,18 @@ interface ThemeContextType {
 }
 
 const ThemeContext = createContext<ThemeContextType>({
-  theme: 'navy',
+  theme: 'light',
   setTheme: () => {},
 });
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setTheme] = useState<ThemeMode>(() => {
     const saved = localStorage.getItem('portfolio-theme') as ThemeMode;
-    return saved || 'navy'; // Default to rich Deep Navy
+    // Default to clean white theme
+    if (saved === 'navy' || saved === 'midnight' || saved === 'emerald' || saved === 'light') {
+      return saved;
+    }
+    return 'light';
   });
 
   useEffect(() => {

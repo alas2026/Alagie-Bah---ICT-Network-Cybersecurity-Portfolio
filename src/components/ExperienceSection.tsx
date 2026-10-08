@@ -22,7 +22,7 @@ export const ExperienceSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
-          <span className="text-xs font-mono uppercase tracking-wider text-cyan-400">05. Professional Track</span>
+          <span className="text-xs font-mono uppercase tracking-wider text-sky-600">05. Professional Track</span>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[var(--text-main)] mt-1">
             Work Experience
           </h2>
@@ -36,20 +36,20 @@ export const ExperienceSection: React.FC = () => {
           {WORK_EXPERIENCE.map((exp, index) => (
             <div
               key={exp.id}
-              className="theme-card border theme-border rounded-xl p-6 sm:p-8 hover:border-cyan-500/50 transition-colors"
+              className="theme-card border theme-border rounded-xl p-6 sm:p-8 hover:border-sky-500/50 transition-colors shadow-sm"
             >
               <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-4 mb-4">
                 
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-[var(--bg-primary)] border border-[var(--border-subtle)] shrink-0">
+                  <div className="p-3 rounded-xl bg-[var(--bg-primary)] border border-[var(--border-subtle)] shrink-0 text-sky-600">
                     {getRoleIcon(exp.id)}
                   </div>
                   <div>
                     <div className="flex flex-wrap items-center gap-2 text-xs text-[var(--text-dim)] mb-1">
-                      <span className="font-semibold text-cyan-400">{exp.company}</span>
+                      <span className="font-semibold text-sky-600">{exp.company}</span>
                       <span aria-hidden="true">·</span>
                       <span className="flex items-center gap-1">
-                        <MapPin className="w-3.5 h-3.5 text-slate-500" />
+                        <MapPin className="w-3.5 h-3.5 text-[var(--text-dim)]" />
                         {exp.location}
                       </span>
                     </div>
@@ -60,8 +60,8 @@ export const ExperienceSection: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2 text-xs font-mono text-[var(--text-main)] bg-[var(--bg-primary)] px-3 py-1.5 rounded-md border border-[var(--border-subtle)] self-start">
-                  <Calendar className="w-3.5 h-3.5 text-cyan-400" />
+                <div className="flex items-center gap-2 text-xs font-mono text-[var(--text-main)] bg-[var(--bg-primary)] px-3 py-1.5 rounded-md border border-[var(--border-subtle)] self-start shadow-xs">
+                  <Calendar className="w-3.5 h-3.5 text-sky-600" />
                   <span>{exp.period}</span>
                 </div>
               </div>
@@ -73,11 +73,11 @@ export const ExperienceSection: React.FC = () => {
 
               {/* Responsibilities list */}
               <div className="space-y-2 mb-6">
-                <span className="block text-[11px] font-mono text-[var(--text-dim)] uppercase tracking-wider mb-2">Key Responsibilities & Contributions:</span>
+                <span className="block text-[11px] font-mono text-[var(--text-dim)] uppercase tracking-wider mb-2">Key Responsibilities &amp; Contributions:</span>
                 <ul className="space-y-2">
                   {exp.responsibilities.map((resp, rIdx) => (
                     <li key={rIdx} className="text-xs sm:text-sm text-[var(--text-muted)] flex items-start gap-2.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0 mt-2" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-sky-600 shrink-0 mt-2" />
                       <span>{resp}</span>
                     </li>
                   ))}
