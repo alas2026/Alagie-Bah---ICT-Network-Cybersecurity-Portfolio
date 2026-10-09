@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Menu, X, Download, Mail, Palette, Check } from 'lucide-react';
-import { useTheme, ThemeMode } from '../context/ThemeContext';
+import React, { useState, useEffect } from 'react';
+import { Menu, X, Download, Mail } from 'lucide-react';
 
 interface NavbarProps {
   onOpenCV: () => void;
@@ -9,9 +8,6 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ onOpenCV }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
-  const themeMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,16 +17,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCV }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (themeMenuRef.current && !themeMenuRef.current.contains(e.target as Node)) {
-        setIsThemeMenuOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
   const navLinks = [
     { label: 'About', href: '#about' },
     { label: 'Skills', href: '#skills' },
@@ -38,13 +24,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCV }) => {
     { label: 'Certifications', href: '#certifications' },
     { label: 'Experience', href: '#experience' },
     { label: 'Projects', href: '#projects' },
-  ];
-
-  const themes: { id: ThemeMode; label: string; dot: string }[] = [
-    { id: 'light', label: 'Clean White (Default)', dot: 'bg-white border border-slate-300' },
-    { id: 'navy', label: 'Deep Navy', dot: 'bg-blue-600' },
-    { id: 'midnight', label: 'Obsidian Midnight', dot: 'bg-zinc-800' },
-    { id: 'emerald', label: 'Cyber Emerald', dot: 'bg-emerald-500' },
   ];
 
   return (
@@ -80,49 +59,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCV }) => {
             ))}
           </nav>
 
-          {/* Zone 3: 1-2 primary actions + theme selector */}
+          {/* Zone 3: 1-2 primary actions */}
           <div className="hidden sm:flex items-center gap-3">
-            {/* Theme dropdown */}
-            <div className="relative" ref={themeMenuRef}>
-              <button
-                onClick={() => setIsThemeMenuOpen(!isThemeMenuOpen)}
-                className="inline-flex items-center gap-1.5 px-2.5 py-2 text-xs font-medium text-[var(--text-muted)] hover:text-[var(--text-main)] bg-[var(--bg-card)] border border-[var(--border-subtle)] rounded-lg hover:border-[var(--border-active)] transition-colors cursor-pointer shadow-sm"
-                title="Change background color palette"
-                aria-label="Theme menu"
-              >
-                <Palette className="w-4 h-4 text-sky-600" />
-                <span className="capitalize">{theme === 'light' ? 'White' : theme}</span>
-              </button>
-
-              {isThemeMenuOpen && (
-                <div className="absolute right-0 mt-2 w-48 rounded-xl bg-[var(--bg-card)] border border-[var(--border-subtle)] shadow-xl p-1.5 z-50 text-xs">
-                  <div className="px-2.5 py-1 text-[10px] font-mono uppercase text-[var(--text-dim)] tracking-wider">
-                    Background Color
-                  </div>
-                  {themes.map((t) => (
-                    <button
-                      key={t.id}
-                      onClick={() => {
-                        setTheme(t.id);
-                        setIsThemeMenuOpen(false);
-                      }}
-                      className={`w-full flex items-center justify-between px-2.5 py-2 rounded-lg text-left transition-colors cursor-pointer ${
-                        theme === t.id
-                          ? 'bg-sky-50 text-sky-700 font-semibold'
-                          : 'text-[var(--text-muted)] hover:bg-[var(--bg-card-hover)] hover:text-[var(--text-main)]'
-                      }`}
-                    >
-                      <div className="flex items-center gap-2">
-                        <span className={`w-2.5 h-2.5 rounded-full ${t.dot}`} />
-                        <span>{t.label}</span>
-                      </div>
-                      {theme === t.id && <Check className="w-3.5 h-3.5 text-sky-600" />}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-
             <button
               onClick={onOpenCV}
               className="inline-flex items-center gap-2 px-3.5 py-2 text-xs sm:text-sm font-medium text-[var(--text-main)] bg-[var(--bg-card)] border border-[var(--border-subtle)] rounded-lg hover:bg-[var(--bg-card-hover)] hover:border-[var(--border-active)] transition-colors whitespace-nowrap cursor-pointer shadow-sm"
@@ -143,23 +81,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCV }) => {
 
           {/* Mobile menu button */}
           <div className="flex items-center gap-2 md:hidden">
-            {/* Quick theme cycle for mobile */}
-            <button
-              onClick={() => {
-                const next: Record<ThemeMode, ThemeMode> = {
-                  navy: 'midnight',
-                  midnight: 'emerald',
-                  emerald: 'light',
-                  light: 'navy',
-                };
-                setTheme(next[theme]);
-              }}
-              className="p-1.5 text-xs font-medium text-[var(--text-muted)] bg-[var(--bg-card)] border border-[var(--border-subtle)] rounded-md hover:text-[var(--text-main)]"
-              title="Cycle background color"
-            >
-              <Palette className="w-3.5 h-3.5 text-cyan-400" />
-            </button>
-
             <button
               onClick={onOpenCV}
               className="px-2.5 py-1.5 text-xs font-medium text-[var(--text-main)] bg-[var(--bg-card)] border border-[var(--border-subtle)] rounded-md hover:bg-[var(--bg-card-hover)]"
@@ -196,29 +117,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCV }) => {
                 {link.label}
               </a>
             ))}
-          </div>
-
-          {/* Mobile Theme Selector Strip */}
-          <div className="pt-2 border-t border-[var(--border-subtle)] space-y-1.5">
-            <span className="block text-[10px] font-mono uppercase text-slate-400 tracking-wider px-1">
-              Background Color Theme:
-            </span>
-            <div className="grid grid-cols-2 gap-1.5">
-              {themes.map((t) => (
-                <button
-                  key={t.id}
-                  onClick={() => setTheme(t.id)}
-                  className={`flex items-center gap-2 p-2 rounded-lg text-xs transition-colors cursor-pointer ${
-                    theme === t.id
-                      ? 'bg-cyan-500/20 text-cyan-300 font-semibold border border-cyan-500/40'
-                      : 'bg-[var(--bg-card)] text-[var(--text-muted)] border border-[var(--border-subtle)]'
-                  }`}
-                >
-                  <span className={`w-2 h-2 rounded-full ${t.dot}`} />
-                  <span className="truncate">{t.label.split(' ')[0]}</span>
-                </button>
-              ))}
-            </div>
           </div>
 
           <div className="pt-3 border-t border-[var(--border-subtle)] flex flex-col gap-2.5">
