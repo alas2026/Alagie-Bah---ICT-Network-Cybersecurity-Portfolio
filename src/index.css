@@ -13,7 +13,22 @@
 }
 
 /* Theme color definitions */
-:root, [data-theme="light"] {
+:root, [data-theme="navy"] {
+  --bg-primary: #060d1f;
+  --bg-secondary: #0a1530;
+  --bg-card: #0d1a3a;
+  --bg-card-hover: #12234d;
+  --bg-overlay: rgba(6, 13, 31, 0.94);
+  --border-subtle: #17284f;
+  --border-active: #38bdf8;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --accent-color: #38bdf8;
+  --accent-glow: rgba(56, 189, 248, 0.15);
+}
+
+[data-theme="light"] {
   --bg-primary: #ffffff;
   --bg-secondary: #f8fafc;
   --bg-card: #ffffff;
@@ -26,21 +41,6 @@
   --text-dim: #64748b;
   --accent-color: #0284c7;
   --accent-glow: rgba(2, 132, 199, 0.08);
-}
-
-[data-theme="navy"] {
-  --bg-primary: #060d1f;
-  --bg-secondary: #0a1530;
-  --bg-card: #0d1a3a;
-  --bg-card-hover: #12234d;
-  --bg-overlay: rgba(6, 13, 31, 0.92);
-  --border-subtle: #17284f;
-  --border-active: #38bdf8;
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --text-dim: #64748b;
-  --accent-color: #38bdf8;
-  --accent-glow: rgba(56, 189, 248, 0.15);
 }
 
 [data-theme="midnight"] {

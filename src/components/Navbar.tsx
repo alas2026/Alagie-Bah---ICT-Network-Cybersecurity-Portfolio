@@ -40,7 +40,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCV }) => {
           {/* Zone 1: Single text element wordmark (Top Bar Contract) */}
           <a 
             href="#hero" 
-            className="text-lg sm:text-xl font-bold tracking-tight text-[var(--text-main)] hover:text-sky-600 transition-colors whitespace-nowrap"
+            className="text-lg sm:text-xl font-bold tracking-tight text-[var(--text-main)] hover:text-cyan-400 transition-colors whitespace-nowrap"
           >
             Alagie Bah
           </a>
@@ -51,10 +51,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCV }) => {
               <a
                 key={link.label}
                 href={link.href}
-                className="hover:text-sky-600 transition-colors py-1 relative group"
+                className="hover:text-cyan-400 transition-colors py-1 relative group"
               >
                 {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-sky-600 transition-all duration-200 group-hover:w-full" />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 transition-all duration-200 group-hover:w-full" />
               </a>
             ))}
           </nav>
@@ -66,13 +66,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCV }) => {
               className="inline-flex items-center gap-2 px-3.5 py-2 text-xs sm:text-sm font-medium text-[var(--text-main)] bg-[var(--bg-card)] border border-[var(--border-subtle)] rounded-lg hover:bg-[var(--bg-card-hover)] hover:border-[var(--border-active)] transition-colors whitespace-nowrap cursor-pointer shadow-sm"
               title="Open printable CV"
             >
-              <Download className="w-4 h-4 text-sky-600" />
+              <Download className="w-4 h-4 text-cyan-400" />
               <span>Download CV</span>
             </button>
 
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-3.5 py-2 text-xs sm:text-sm font-semibold text-white bg-sky-600 rounded-lg hover:bg-sky-700 transition-colors whitespace-nowrap shadow-sm shadow-sky-600/20"
+              className="inline-flex items-center gap-2 px-3.5 py-2 text-xs sm:text-sm font-semibold text-slate-950 bg-cyan-400 rounded-lg hover:bg-cyan-300 transition-colors whitespace-nowrap shadow-sm shadow-cyan-400/20"
             >
               <Mail className="w-4 h-4" />
               <span>Contact Me</span>
