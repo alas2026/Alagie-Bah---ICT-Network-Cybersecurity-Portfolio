@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowDown, Download, Mail, Github, ExternalLink, MapPin, Shield, Network, Server, Terminal } from 'lucide-react';
+import { ArrowDown, Download, Mail, Github, ExternalLink, MapPin, Shield, Network, Server } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import heroPortrait from '../assets/images/alagiebahprofile.jpg';
 
@@ -9,13 +9,13 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
   return (
-    <section id="hero" className="relative pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden">
-      {/* Background ambient tech grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#38bdf80d_1px,transparent_1px),linear-gradient(to_bottom,#38bdf80d_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
+    <section id="hero" className="relative pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden bg-[#0B0B0D]">
+      {/* Background ambient gold tech grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#5C4A1F18_1px,transparent_1px),linear-gradient(to_bottom,#5C4A1F18_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
       
-      {/* Ambient gradient glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Ambient gold glow */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-[#FFD700]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -23,67 +23,67 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
           {/* Left Column: Text & CTAs */}
           <div className="lg:col-span-7 space-y-6">
             
-            {/* Location & Status Line (Zero-Pill Rule: unboxed text with separators) */}
-            <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-slate-400">
-              <span className="inline-flex items-center gap-1.5 text-cyan-400 font-medium">
-                <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-                Available for Technical & Network Roles
+            {/* Location & Status Line */}
+            <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-[#B8B8C0]">
+              <span className="inline-flex items-center gap-1.5 text-[#F3E5AB] font-medium bg-[#1C1C20] px-3 py-1 rounded-full border border-[#5C4A1F]/60">
+                <span className="w-2 h-2 rounded-full bg-[#FFD700] shadow-[0_0_8px_#FFD700] animate-pulse" />
+                Available for Technical &amp; Network Roles
               </span>
-              <span aria-hidden="true">·</span>
-              <span className="inline-flex items-center gap-1 text-slate-300">
-                <MapPin className="w-3.5 h-3.5 text-slate-400" />
+              <span aria-hidden="true" className="text-[#5C4A1F]">·</span>
+              <span className="inline-flex items-center gap-1 text-[#B8B8C0]">
+                <MapPin className="w-3.5 h-3.5 text-[#D4AF37]" />
                 {PERSONAL_INFO.location}
               </span>
             </div>
 
-            {/* Candidate Identity */}
+            {/* Candidate Identity with Gold Typography */}
             <div className="space-y-2">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight text-balance">
-                Alagie Bah
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#F5F5F5] leading-tight text-balance">
+                <span className="text-gold-gradient">Alagie</span> Bah
               </h1>
-              <p className="text-base sm:text-lg font-medium text-cyan-300/90 leading-relaxed">
-                {PERSONAL_INFO.headline}
+              <p className="text-base sm:text-lg font-semibold tracking-wide text-[#F3E5AB] leading-relaxed">
+                ICT Professional | Networking &amp; Cybersecurity
               </p>
             </div>
 
-            {/* Key Hero Headline Quote */}
-            <div className="border-l-2 border-cyan-500/60 pl-4 py-1">
-              <blockquote className="text-xl sm:text-2xl font-semibold text-slate-100 tracking-tight leading-snug">
+            {/* Key Hero Headline Quote with Executive Gold Accent */}
+            <div className="border-l-2 border-[#D4AF37] pl-4 py-2 bg-[#1C1C20]/40 rounded-r-lg">
+              <blockquote className="text-xl sm:text-2xl font-semibold text-[#F5F5F5] tracking-tight leading-snug">
                 “Building Secure Networks. Solving Technical Problems. Creating Digital Solutions.”
               </blockquote>
             </div>
 
             {/* Concise overview */}
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl">
-              National Diploma graduate in Computer Science from MDI with hands-on networking and PC repair & maintenance (hardware and software) from IIHT and QuantumNet. 
-              Bringing practical experience across broadcast operations at <span className="text-white font-medium">QTV Gambia</span>, 
-              telecom support at <span className="text-white font-medium">Qcell</span>, and grassroots community advocacy with <span className="text-white font-medium">NSGA</span> (UNFPA & UNICEF-backed). 
+            <p className="text-sm sm:text-base text-[#B8B8C0] leading-relaxed max-w-2xl">
+              National Diploma graduate in Computer Science from MDI with hands-on networking and PC repair &amp; maintenance (hardware and software) from IIHT and QuantumNet. 
+              Bringing practical experience across broadcast operations at <span className="text-[#F3E5AB] font-semibold">QTV Gambia</span>, 
+              telecom support at <span className="text-[#F3E5AB] font-semibold">Qcell</span>, and grassroots community advocacy with <span className="text-[#F3E5AB] font-semibold">NSGA</span> (UNFPA &amp; UNICEF-backed). 
               Dedicated to solving technical challenges and maintaining secure enterprise network environments.
             </p>
 
-            {/* Action Buttons: 4 Required Buttons */}
+            {/* Action Buttons: Styled with Luxury Gold System */}
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <a
                 href="#projects"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-semibold text-slate-950 bg-cyan-400 hover:bg-cyan-300 rounded-lg transition-colors shadow-md shadow-cyan-500/20 whitespace-nowrap cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-bold text-[#0B0B0D] bg-gradient-to-r from-[#D4AF37] to-[#FFD700] hover:from-[#FFD700] hover:to-[#F3E5AB] rounded-lg transition-all shadow-lg shadow-[#D4AF37]/25 hover:shadow-[#D4AF37]/45 hover:scale-[1.02] whitespace-nowrap cursor-pointer"
               >
                 <span>View My Projects</span>
-                <ArrowDown className="w-4 h-4" />
+                <ArrowDown className="w-4 h-4 text-[#0B0B0D]" />
               </a>
 
               <button
                 onClick={onOpenCV}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-medium text-white bg-slate-900 border border-slate-700 hover:bg-slate-800 hover:border-slate-600 rounded-lg transition-colors whitespace-nowrap cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-medium text-[#F3E5AB] bg-[#1C1C20] border border-[#5C4A1F] hover:border-[#D4AF37] hover:text-[#FFD700] hover:bg-[#D4AF37]/10 rounded-lg transition-all whitespace-nowrap cursor-pointer shadow-sm"
               >
-                <Download className="w-4 h-4 text-cyan-400" />
+                <Download className="w-4 h-4 text-[#D4AF37]" />
                 <span>Download CV</span>
               </button>
 
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-medium text-slate-200 bg-slate-900/60 border border-slate-800 hover:bg-slate-800 hover:text-white rounded-lg transition-colors whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-medium text-[#F5F5F5] bg-[#151518] border border-[#5C4A1F]/70 hover:border-[#D4AF37] hover:text-[#FFD700] hover:bg-[#D4AF37]/10 rounded-lg transition-all whitespace-nowrap"
               >
-                <Mail className="w-4 h-4 text-slate-400" />
+                <Mail className="w-4 h-4 text-[#D4AF37]" />
                 <span>Contact Me</span>
               </a>
 
@@ -91,98 +91,97 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
                 href={PERSONAL_INFO.github}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium text-slate-300 hover:text-white border border-slate-800 hover:border-slate-700 bg-slate-950 rounded-lg transition-colors whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium text-[#B8B8C0] hover:text-[#FFD700] border border-[#5C4A1F]/60 hover:border-[#D4AF37] bg-[#1C1C20] rounded-lg transition-all whitespace-nowrap shadow-sm"
                 title="View GitHub profile"
               >
-                <Github className="w-4 h-4" />
+                <Github className="w-4 h-4 text-[#D4AF37]" />
                 <span>GitHub</span>
-                <ExternalLink className="w-3.5 h-3.5 text-slate-500" />
+                <ExternalLink className="w-3.5 h-3.5 text-[#8E8E98]" />
               </a>
             </div>
 
-            {/* Editorial highlights bar with unboxed typography */}
-            <div className="pt-4 border-t border-slate-800/80 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
-              <div>
-                <span className="block text-slate-500 font-mono">Academic Track</span>
-                <span className="font-semibold text-slate-200">ND Computer Science</span>
-                <span className="block text-slate-400">Completed (MDI)</span>
+            {/* Editorial highlights bar with gold dividers */}
+            <div className="pt-4 border-t border-[#5C4A1F]/50 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
+              <div className="p-2 rounded-lg bg-[#151518]/60 border border-[#5C4A1F]/30">
+                <span className="block text-[#8E8E98] font-mono text-[11px] uppercase tracking-wider">Academic Track</span>
+                <span className="font-semibold text-[#F5F5F5] block mt-0.5">ND Computer Science</span>
+                <span className="block text-[#F3E5AB]/90 text-[11px]">Completed (MDI)</span>
               </div>
-              <div>
-                <span className="block text-slate-500 font-mono">Network Specialization</span>
-                <span className="font-semibold text-slate-200">CCNA & Security</span>
-                <span className="block text-slate-400">IIHT & Cisco Training</span>
+              <div className="p-2 rounded-lg bg-[#151518]/60 border border-[#5C4A1F]/30">
+                <span className="block text-[#8E8E98] font-mono text-[11px] uppercase tracking-wider">Network Track</span>
+                <span className="font-semibold text-[#F5F5F5] block mt-0.5">CCNA &amp; Security</span>
+                <span className="block text-[#F3E5AB]/90 text-[11px]">IIHT &amp; Cisco Training</span>
               </div>
-              <div>
-                <span className="block text-slate-500 font-mono">Operations</span>
-                <span className="font-semibold text-slate-200">Programs Assistant</span>
-                <span className="block text-slate-400">QTV Gambia</span>
+              <div className="p-2 rounded-lg bg-[#151518]/60 border border-[#5C4A1F]/30">
+                <span className="block text-[#8E8E98] font-mono text-[11px] uppercase tracking-wider">Operations</span>
+                <span className="font-semibold text-[#F5F5F5] block mt-0.5">Programs Assistant</span>
+                <span className="block text-[#F3E5AB]/90 text-[11px]">QTV Gambia</span>
               </div>
-              <div>
-                <span className="block text-slate-500 font-mono">Field Experience</span>
-                <span className="font-semibold text-slate-200">Community Outreach</span>
-                <span className="block text-slate-400">NSGA · UNICEF/UNFPA</span>
+              <div className="p-2 rounded-lg bg-[#151518]/60 border border-[#5C4A1F]/30">
+                <span className="block text-[#8E8E98] font-mono text-[11px] uppercase tracking-wider">Field Experience</span>
+                <span className="font-semibold text-[#F5F5F5] block mt-0.5">Community Outreach</span>
+                <span className="block text-[#F3E5AB]/90 text-[11px]">NSGA · UNICEF/UNFPA</span>
               </div>
             </div>
 
           </div>
 
-          {/* Right Column: Portrait and Technical Card */}
+          {/* Right Column: Portrait and Technical Card with Gold Frame */}
           <div className="lg:col-span-5 flex flex-col items-center">
             <div className="relative w-full max-w-sm sm:max-w-md">
               
-              {/* Outer soft glow border */}
-              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-cyan-500/20 via-blue-500/10 to-transparent blur-sm" />
+              {/* Outer soft gold glow border */}
+              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-[#D4AF37]/30 via-[#FFD700]/15 to-transparent blur-md" />
 
-              <div className="relative rounded-2xl theme-card border theme-border p-3 overflow-hidden shadow-2xl">
+              <div className="relative rounded-2xl bg-[#1C1C20] border border-[#5C4A1F] p-3 overflow-hidden shadow-2xl">
                 
-                {/* Photo container with fallback */}
-                <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-[var(--bg-primary)]">
+                {/* Photo container */}
+                <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-[#0B0B0D] border border-[#5C4A1F]/60">
                   <img
                     src={heroPortrait}
                     alt="Alagie Bah - ICT and Cybersecurity Professional"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"
                     onError={(e) => {
-                      // Styled CSS fallback
                       const target = e.currentTarget;
                       target.style.display = 'none';
                       if (target.parentElement) {
                         target.parentElement.innerHTML = `
-                          <div class="w-full h-full flex flex-col items-center justify-center bg-slate-900 text-slate-300 p-6 text-center">
-                            <div class="w-16 h-16 rounded-full bg-cyan-950 border border-cyan-500/40 flex items-center justify-center text-cyan-400 mb-3 font-bold text-xl">AB</div>
-                            <span class="font-bold text-lg text-white">Alagie Bah</span>
-                            <span class="text-xs text-cyan-400 mt-1">ICT & Cybersecurity Professional</span>
-                            <span class="text-xs text-slate-500 mt-2">Brufut, The Gambia</span>
+                          <div class="w-full h-full flex flex-col items-center justify-center bg-[#151518] text-[#F5F5F5] p-6 text-center">
+                            <div class="w-16 h-16 rounded-full bg-[#1C1C20] border border-[#5C4A1F] flex items-center justify-center text-[#FFD700] mb-3 font-bold text-xl">AB</div>
+                            <span class="font-bold text-lg text-[#F5F5F5]">Alagie Bah</span>
+                            <span class="text-xs text-[#F3E5AB] mt-1">ICT &amp; Cybersecurity Professional</span>
+                            <span class="text-xs text-[#8E8E98] mt-2">Brufut, The Gambia</span>
                           </div>
                         `;
                       }
                     }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0D]/90 via-transparent to-transparent pointer-events-none" />
                   
                   {/* Photo Caption Overlay */}
                   <div className="absolute bottom-3 left-3 right-3 text-left">
-                    <span className="text-xs font-mono uppercase tracking-wider text-cyan-400">Brufut, The Gambia</span>
-                    <p className="text-sm font-semibold text-white">Alagie Bah</p>
+                    <span className="text-[11px] font-mono uppercase tracking-wider text-[#FFD700] block">Brufut, The Gambia</span>
+                    <p className="text-sm font-semibold text-[#F5F5F5]">Alagie Bah</p>
                   </div>
                 </div>
 
-                {/* Technical Focus Badge Row */}
-                <div className="mt-3 pt-3 border-t border-[var(--border-subtle)] grid grid-cols-3 gap-2 text-center text-xs">
-                  <div className="p-2 rounded bg-[var(--bg-secondary)] border border-[var(--border-subtle)]">
-                    <Network className="w-4 h-4 mx-auto text-cyan-400 mb-1" />
-                    <span className="block font-medium text-[var(--text-main)]">Networking</span>
-                    <span className="text-[10px] text-[var(--text-dim)]">Cisco / Packet Tracer</span>
+                {/* Technical Focus Badge Row in Luxury Charcoal & Gold */}
+                <div className="mt-3 pt-3 border-t border-[#5C4A1F]/60 grid grid-cols-3 gap-2 text-center text-xs">
+                  <div className="p-2 rounded-lg bg-[#151518] border border-[#5C4A1F]/50 hover:border-[#D4AF37] transition-colors">
+                    <Network className="w-4 h-4 mx-auto text-[#D4AF37] mb-1" />
+                    <span className="block font-medium text-[#F5F5F5]">Networking</span>
+                    <span className="text-[10px] text-[#8E8E98]">Cisco / Labs</span>
                   </div>
-                  <div className="p-2 rounded bg-[var(--bg-secondary)] border border-[var(--border-subtle)]">
-                    <Shield className="w-4 h-4 mx-auto text-cyan-400 mb-1" />
-                    <span className="block font-medium text-[var(--text-main)]">Cybersecurity</span>
-                    <span className="text-[10px] text-[var(--text-dim)]">Network Defense</span>
+                  <div className="p-2 rounded-lg bg-[#151518] border border-[#5C4A1F]/50 hover:border-[#D4AF37] transition-colors">
+                    <Shield className="w-4 h-4 mx-auto text-[#FFD700] mb-1" />
+                    <span className="block font-medium text-[#F5F5F5]">Cybersecurity</span>
+                    <span className="text-[10px] text-[#8E8E98]">Defense &amp; ACLs</span>
                   </div>
-                  <div className="p-2 rounded bg-[var(--bg-secondary)] border border-[var(--border-subtle)]">
-                    <Server className="w-4 h-4 mx-auto text-cyan-400 mb-1" />
-                    <span className="block font-medium text-[var(--text-main)]">Systems &amp; IT</span>
-                    <span className="text-[10px] text-[var(--text-dim)]">Linux / Hardware</span>
+                  <div className="p-2 rounded-lg bg-[#151518] border border-[#5C4A1F]/50 hover:border-[#D4AF37] transition-colors">
+                    <Server className="w-4 h-4 mx-auto text-[#F3E5AB] mb-1" />
+                    <span className="block font-medium text-[#F5F5F5]">Systems &amp; IT</span>
+                    <span className="text-[10px] text-[#8E8E98]">Linux / Hardware</span>
                   </div>
                 </div>
 

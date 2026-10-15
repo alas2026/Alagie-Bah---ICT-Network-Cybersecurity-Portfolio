@@ -22,7 +22,7 @@ export default function App() {
 
   return (
     <ThemeProvider>
-      <div className="min-h-screen theme-canvas flex flex-col selection:bg-cyan-500/20 selection:text-cyan-300">
+      <div className="min-h-screen bg-[#0B0B0D] text-[#F5F5F5] flex flex-col selection:bg-[#D4AF37]/30 selection:text-[#FFD700]">
         {/* Top Navigation Bar */}
         <Navbar onOpenCV={() => setIsCVModalOpen(true)} />
 

@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-export type ThemeMode = 'navy' | 'midnight' | 'emerald' | 'light';
+export type ThemeMode = 'gold' | 'navy' | 'midnight' | 'emerald' | 'light';
 
 interface ThemeContextType {
   theme: ThemeMode;
@@ -8,7 +8,7 @@ interface ThemeContextType {
 }
 
 const ThemeContext = createContext<ThemeContextType>({
-  theme: 'navy',
+  theme: 'gold',
   setTheme: () => {},
 });
 
@@ -16,14 +16,13 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const [theme, setTheme] = useState<ThemeMode>(() => {
     try {
       const saved = localStorage.getItem('portfolio-theme') as ThemeMode;
-      // Default to high-contrast Deep Navy theme
-      if (saved === 'navy' || saved === 'midnight' || saved === 'emerald') {
+      if (saved === 'gold' || saved === 'navy' || saved === 'midnight' || saved === 'emerald') {
         return saved;
       }
     } catch {
       // Fallback
     }
-    return 'navy';
+    return 'gold';
   });
 
   useEffect(() => {
